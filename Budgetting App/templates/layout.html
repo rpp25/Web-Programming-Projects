@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CS1520 Budgeting Application</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+	</head>
+	<body>
+		<h3>Budget for current month:</h3>
+		<table id="budgetTable">
+		</table>
+		<h3>Purchase list for current month:</h3>
+		<table id="purchaseTable">
+		</table>
+		<form name="budgetForm">
+			<h3> Add new purchase into budget: </h3>
+			<label>Amount:<input type="text" id="purchaseAmount" name="" value=""/></label>
+			<label>Item purchased:<input type="text" id="purchaseItem" name="" value=""/></label>
+			<label>Date purchased:<input type="date" id="purchaseDate" name="" value=""/></label>
+			<label>Budget category:<input type="text" id="purchaseCategory" name="" placeholder="Leave blank for uncategorized" value=""/></label>
+			<input type="button" class="button" id="purchaseAdd" value="Add Purchase Into Budget"/>
+		</form>
+		<form name="categoryForm">
+			<h3> Add a new category to your budget: </h3>
+			<label>Name:<input type="text" id="catName" name="" value=""/></label>
+			<label>Amount:<input type="text" id="catAmount" name="" value=""/></label>
+			<input type="button" class="button" id="categoryAdd" value="Add Category Into Budget"/>
+		</form>
+	</body>
+</html>
