@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+	<div id="center">
+	<h1>Log in</h1>
+	{% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+	<form action="{{ url_for('login') }}" method="post">
+		<dl>
+		<dt>Username:
+		<dd><input type="text" name="username">
+		<dt>Password:
+		<dd><input type="password" name="password">
+		<dd><input class="button" type="submit" value="Login">
+		</dl>
+	</form>
+	<h1>Register new customer account!</h1>
+	<form action="{{ url_for('newCustomer') }}" method="post">
+		<dl>
+		<dt>Create Username:
+		<dd><input type="text" name="customerUsername">
+		<dt>Create Password:
+		<dd><input type="password" name="customerPassword">
+		<dd><input class="button" type="submit" value="Create Customer Account">
+		</dl>
+	</form>
+</div>
+{% endblock %}

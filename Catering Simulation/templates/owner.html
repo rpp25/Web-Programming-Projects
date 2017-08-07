@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+	<h1>Hello owner!</h1>
+	<div class="center">
+	<ul>
+	<h2>Event list:</h2>
+	{% for event in events %}
+		<li>{{ event.eventName }} &nbsp;:&nbsp; {{ event.eventDate }} &nbsp;:&nbsp; {{ event.staff.count() }} staff member(s) working. <br />
+			{% for staff in event.staff %}
+			&nbsp;&nbsp; {{ staff }} <br />
+			{% endfor %}
+			------------------------------------------------------------------<br />
+	{% else %}
+		<li><em>No events have been scheduled.</em>
+	{% endfor %}
+
+	</ul>
+</div>
+	<form action="{{ url_for('newStaff') }}" method="post">
+		<h2>Create new staff account:</h2>
+		<dl>
+		<dt>Create username:
+		<dd><input type="text" name="username">
+		<dt>Create password:
+		<dd><input type="text" name="password">
+		<dd><input class="button" type="submit" value="Create Staff">
+		</dl>
+	</form>
+{% endblock %}

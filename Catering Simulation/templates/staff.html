@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+	<h2>Hello {{ username }}!</h2>
+
+	<ul class="events">
+	<h2>All events:</h2>
+	{% for event in events %}
+		<li><a href="{{ url_for('assignStaff', eventID=event.eventID) }}">{{ event.eventName }} &nbsp;:&nbsp; {{ event.eventDate }}</a>
+	{% else %}
+		<li><em>No available events.</em>
+	{% endfor %}
+	</ul>
+
+	<ul class="events">
+	<h2>You are scheduled to work: </h2>
+	{% for event in currentEvents %}
+		<li>{{ event.eventName }} &nbsp;:&nbsp; {{ event.eventDate }}
+	{% else %}
+		<li><em>You are currently not assigned to an event.</em>
+	{% endfor %}
+	</ul>
+
+{% endblock %}

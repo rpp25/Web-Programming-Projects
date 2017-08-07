@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+	<div class="center">
+	<h1>Hello {{ custName }}!</h1>
+	<form action="{{ url_for('newEvent') }}" method="post">
+		<h2>Schedule an event:</h2>
+		<dl>
+		<dt>Enter event's name:
+		<dd><input type="text" name="eventName">
+		<dt>Enter event's date:
+		<dd><input type="date" name="eventDate">
+		<dd><input class="button" type="submit" value="Schedule Event">
+		</dl>
+	</form>
+
+	<ul>
+	<h2>{{ custName }}'s events:</h2>
+	{% for event in events %}
+		<li>{{ event.eventName }} &nbsp;:&nbsp; {{ event.eventDate }}&nbsp;-&nbsp;
+		<a href="{{ url_for('deleteEvent', eventID=event.eventID) }}">Delete Event</a>
+	{% else %}
+		<li><em>No events scheduled.</em>
+	{% endfor %}
+	</ul>
+</div>
+{% endblock %}

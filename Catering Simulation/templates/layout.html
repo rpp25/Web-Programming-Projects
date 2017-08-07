@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<title>CS1520 Project 2</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<div class="layout">
+	<h1>1520 Catering</h1>
+	<h2>(Times are tough. We're pivoting!)</h2>
+	<div class="site">
+	{% if not session.isLoggedIn %}
+		<a href="{{ url_for('login') }}">Log in or create new account</a>
+	{% else %}
+		<a href="{{ url_for('logout') }}">Log out</a>
+	{% endif %}
+	</div>
+
+	{% for n in get_flashed_messages() %}
+	<div class="flash">{{ n }}</div>
+	{% endfor %}
+
+{% block body %}
+{% endblock %}
+</div>

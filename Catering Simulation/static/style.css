@@ -1,0 +1,45 @@
+body {
+	font-family: sans-serif;
+	background: black;
+}
+h1, h2 {
+	font-family:"Verdana", Geneva, sans-serif;
+	color: limegreen;
+	text-align:center
+}
+
+ul{
+	position: relative;
+	float: inherit;
+	list-style-position: inside;
+	align-items: center;
+}
+
+.layout {
+	margin: auto;
+	width: 50%;
+	border: 10px solid gold;
+	background: #673ab7;
+}
+
+.center{
+	float: center;
+	text-align: center;
+	position: relative;
+	background: lightblue;
+}
+.site {
+	text-align: center;
+
+}
+.flash {
+	background: darkred;
+	color: white;
+}
+.error {
+	background: pink;
+}
+
+a {
+	color: aquamarine;
+}
