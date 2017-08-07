@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block body %}
+	{% if error %}<strong>ERROR: </strong> {{ error }} {% endif %}
+	<ul id="list" style="list-style: none;">
+	{% for m in msgs %}
+		<li>{{ m.author }}: {{ m.contents }}</li>
+	{% endfor %}
+	</ul>
+
+	<form name="form">
+		<input type="text" name="msg" id="msg" />
+		<input type="button" id="submit" value="Submit" />
+	</form>
+		<script>
+
+		var timeoutID;
+		var timeout = 1000;
+
+		function setup() {
+			document.getElementById("submit").addEventListener("click", makePost, true);
+
+			timeoutID = window.setTimeout(poller, timeout);
+		}
+
+		function makePost() {
+			var httpRequest = new XMLHttpRequest();
+
+			if (!httpRequest) {
+				alert('Giving up :( Cannot create an XMLHTTP instance');
+				return false;
+			}
+
+			var message = document.getElementById("msg").value;
+			httpRequest.onreadystatechange = function() { handlePost(httpRequest, message) };
+
+			httpRequest.open("POST", "/new_msg");
+			httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+			var data = "username={{ g.user.username }}" + "&msg=" + message + "&room={{ id }}";
+
+			httpRequest.send(data);
+		}
+
+		function handlePost(httpRequest, data) {
+			if (httpRequest.readyState === XMLHttpRequest.DONE) {
+				if (httpRequest.status === 200) {
+					var node = document.createElement("LI");
+					var textNode = document.createTextNode("{{ g.user.username }}: " + data);
+					node.appendChild(textNode);
+					document.getElementById("list").appendChild(node);
+					clearInput();
+				} else {
+					alert("There was a problem with the post request.");
+				}
+			}
+		}
+
+		function poller() {
+			var httpRequest = new XMLHttpRequest();
+
+			if (!httpRequest) {
+				alert('Giving up :( Cannot create an XMLHTTP instance');
+				return false;
+			}
+
+			httpRequest.onreadystatechange = function() { handlePoll(httpRequest) };
+			httpRequest.open("GET", "/msgs/{{ id }}");
+			httpRequest.send();
+		}
+
+		function handlePoll(httpRequest) {
+			if (httpRequest.readyState === XMLHttpRequest.DONE) {
+				if (httpRequest.status === 200) {
+					var li = document.getElementById("list");
+					li.innerHTML = "";
+
+					var msgs = JSON.parse(httpRequest.responseText);
+					for (var i = 0; i < msgs.length; i++) {
+						if (msgs[i].content !== undefined) {
+							var node = document.createElement("LI");
+							var textNode = document.createTextNode(msgs[i].author + ": " + msgs[i].content);
+							node.appendChild(textNode);
+							li.appendChild(node);
+						}
+					}
+
+					timeoutID = window.setTimeout(poller, timeout);
+
+				} else {
+					alert("There was a problem with the poll request.  you'll need to refresh the page to recieve updates again!");
+				}
+			}
+		}
+
+		function clearInput() {
+			document.getElementById("msg").value = "";
+		}
+
+		window.addEventListener("load", setup, true);
+
+		</script>
+{% endblock %}

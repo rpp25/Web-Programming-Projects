@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+<body>
+<h1>Login</h1>
+{% if error %}<strong>ERROR: </strong> {{ error }} {% endif %}
+
+<form method="post" action="">
+	<ul style="list-style: none;">
+		<li>Username:</li>
+		<li><input type="text" name="username"></li>
+		<li>Password:</li>
+		<li><input type="text" name="password"></li>
+		<li><button type="submit">Login</button></li>
+	</ul>
+</form>
+{% endblock %}
