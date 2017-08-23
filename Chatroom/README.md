@@ -1,10 +1,10 @@
-# CS/COE 1520 Assignment 3
+# Chatroom
 
 ## Goal:
 To gain experience using AJAJ and JSON by building a website to host and manage multiple chat rooms.
 
 ## High-level description:
-You will be writing a website to host and manage chat rooms.
+A website to host and manage chat rooms.
 
 ## Specifications:
 1.  When visiting the page for the first time, users should be given the chance to create an account or login
