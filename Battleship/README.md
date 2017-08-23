@@ -1,5 +1,4 @@
-# CS/COE 1520 Assignment 1
-
+# Battleship
 ## Goal:
 To gain experience building interactive web applications through the use of JavaScript and the DOM.
 
@@ -44,23 +43,3 @@ These pieces can be placed either horizontally or vertically.
 				*   24 - (2 * 4)
 		*   Your game should keep track of the names and scores of the 10 players with the highest scores in local storage.
 			*   If 10 players have all achieved the max score (24), no further updates to local storage are required.
-
-## Submission Guidelines:
-*  **DO NOT SUBMIT** any IDE package files.
-*  You must name the main page for your game "battleship.html", and place it in the root directory of your repository.
-*  You must fill out info_sheet.txt.
-*  Be sure to remember to push the latest copy of your code back to your GitHub repository before the the assignment is due.  At the deadline, the repositories will automatically be copied for grading.  Whatever is present in your GitHub repository at that time will be considered your submission for this assignment.
-
-## Additional Notes/Hints:
-*  This project will require extensive manipulation of the DOM to enable the game to run as described.
-*  Your game does not need to persist across page refreshes.  It is acceptable for a page refresh to restart the game.
-*  While you are not going to be heavily graded on the style and design of your game, it should be presented in a clear and readable manner.
-
-## Grading Rubric:
-*  Turns proceed as described:  20%
-*  Game boards are displayed properly:  25%
-*  Event handling is processed as described:  15%
-*  Ship placement strings are correctly parsed:  15%
-*  Score saving works appropriately:  15%
-*  Clear and readable presentation:  5%
-*  Submission/info sheet:  5%
