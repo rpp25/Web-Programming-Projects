@@ -27,26 +27,3 @@ You will be writing a website to host and manage chat rooms.
 1.  All data for your application should be stored in an SQLite database named "chat.db" using SQLAlchemy's ORM and the Flask-SQLAlchemy extension.
 1.  You must build your website using JavaScript, JSON, AJAJ, Python 3.5 or greater, Flask 0.12, SQLAlchemy, and the Flask-SQLAlchemy extension.
 
-## Submission Guidelines:
-*  **DO NOT SUBMIT** any IDE package files.
-*  Do not include chat.db in your submitted repository.
-*  You must name the main flask file for your site "chat.py", and place it in the root directory of your repository.
-*  You must be able to run your application by setting the FLASK_APP environment variable to your chat.py and running "flask run"
-*  You must be able to initialize your database by setting the FLASK_APP environment variable to your chat.py and running "flask initdb"
-*  You must fill out info_sheet.txt.
-*  Be sure to remember to push the latest copy of your code back to your GitHub repository before the the assignment is due.  At the deadline, the repositories will automatically be copied for grading.  Whatever is present in your GitHub repository at that time will be considered your submission for this assignment.
-
-## Additional Notes/Hints:
-*  You may find the use of profiles (https://support.google.com/chrome/answer/2364824) helpful for testing multiple users logging in to the chat site at the same time.
-*  While you are not going to be heavily graded on the style and design of your web site, it should be presented in a clear and readable manner.
-
-## Grading Rubric:
-*  User management (account creation/login/logout) works as specified: 10%
-*  List of available chat rooms shown:  10%
-*  Leaving a chat room works as specified:  10%
-*  Posting new messages to a chat room works as specified:  15%
-*  Polled updates performed as specified: 15%
-*  AJAJ working as specified:  20%
-*  SQLAlchemy data model quality:  10%
-*  Clear and readable presentation:  5%
-*  Submission/info sheet:  5%
