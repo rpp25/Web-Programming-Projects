@@ -1,5 +1,4 @@
-# CS/COE 1520 Assignment 4
-
+# Budgetting App
 ## Goal:
 To gain experience with building RESTful APIs and using functional programming.
 
@@ -25,27 +24,3 @@ You can represent all server-side data as Python data structures, you do not nee
 	*  If the server is killed (i.e., Ctrl+C issued), all category/purchase data can be forgotten.
 1.  You must build your website using JavaScript, JSON, AJAJ, Python 3.5 or greater, and Flask 0.12.
 
-## Submission Guidelines:
-*  **DO NOT SUBMIT** any IDE package files.
-*  You must name the main flask file for your site "budget.py", and place it in the root directory of your repository.
-*  You must be able to run your application by setting the FLASK_APP environment variable to your budget.py and running "flask run"
-*  You must fill out info_sheet.txt.
-*  Be sure to remember to push the latest copy of your code back to your GitHub repository before the the assignment is due.  At the deadline, the repositories will automatically be copied for grading.  Whatever is present in your GitHub repository at that time will be considered your submission for this assignment.
-
-## Additional Notes/Hints:
-*  While you are not going to be heavily graded on the style and design of your web site, it should be presented in a clear and readable manner.
-*  Using the JavaScript Date() class, you can construct a date object, and use that to figure out the current month.
-*  While you are not explicitly required to use Flask-restful, you are certainly allowed to use it to build a RESTful API.
-	If you decide against using Flask-restful, be sure to take care in building a truly RESTful API.
-*  The lack of persistent data may lead to unwieldly debugging.  You may find it helpful to use cURL (https://curl.haxx.se/docs/manpage.html) to automate a series of test insteractions with the RESTful API.
-
-## Grading Rubric:
-*  Data is fetched correctly:  10%
-*  Add category works correctly:  10%
-*  Delete category works correctly:  10% 
-*  Add purchase works correctly:  10%
-*  RESTful API properly implemented:  15%
-*  Proper analysis of budget performed:  25%
-*  All AJAJ responses (to POST and GET requests) are clearly printed to the JS console:  10%
-*  Clear and readable presentation:  5%
-*  Submission/info sheet:  5%
